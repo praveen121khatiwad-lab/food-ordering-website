@@ -5,7 +5,7 @@ let searchQuery = '';
 const menuItems = [
     { id: 1, name: "Classic Burger", category: "Burger", price: 8.99, image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&q=80" },
     { id: 2, name: "Double Cheese Burger", category: "Burger", price: 12.99, image: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500&q=80" },
-    { id: 3, name: "Crispy Chicken Burger", category: "Burger", price: 10.99, image: "https://images.unsplash.com/photo-1610440042657-612c34d95e9f?w=500&q=80" },
+    { id: 4, name: "Pepperoni Pizza", category: "Pizza", price: 14.99, image: "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=500&q=80" },
     { id: 4, name: "Pepperoni Pizza", category: "Pizza", price: 14.99, image: "https://images.unsplash.com/photo-1513104890d38-7c0f4749419b?w=500&q=80" },
     { id: 5, name: "Veggie Supreme Pizza", category: "Pizza", price: 13.99, image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80" },
     { id: 6, name: "Margherita Pizza", category: "Pizza", price: 11.99, image: "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=500&q=80" },
