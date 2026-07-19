@@ -3,17 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foddy</title>
+    <title>Foddy - Premium Food</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Foddy</h1>
-        <div id="cart-info">Cart: <span id="cart-count">0</span> items</div>
+        <div class="logo">🍔 Foddy</div>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search delicious food..." oninput="handleSearch(event)">
+        </div>
+        <div id="cart-btn" onclick="toggleCart(true)">
+            🛒 Cart <span id="cart-count">0</span>
+        </div>
     </header>
+    
+    <section class="hero">
+        <h2>Delicious Food, Delivered To You</h2>
+        <p>Explore our menu, search your favorites, and place your order in seconds!</p>
+    </section>
+
     <main>
+        <div class="category-filters">
+            <button class="cat-btn active" onclick="filterMenu('All', this)">All</button>
+            <button class="cat-btn" onclick="filterMenu('Burger', this)">Burgers</button>
+            <button class="cat-btn" onclick="filterMenu('Pizza', this)">Pizzas</button>
+            <button class="cat-btn" onclick="filterMenu('Drink', this)">Drinks</button>
+            <button class="cat-btn" onclick="filterMenu('Dessert', this)">Desserts</button>
+        </div>
+        
         <div id="menu-container"></div>
     </main>
+
+    <div id="cart-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Your Shopping Cart</h3>
+                <span class="close-btn" onclick="toggleCart(false)">&times;</span>
+            </div>
+            <div id="cart-items"></div>
+            <div class="modal-footer">
+                <div class="total-price">Total: $<span id="cart-total">0.00</span></div>
+                <button class="checkout-btn" onclick="checkout()">Place Order</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="success-modal" class="modal-overlay">
+        <div class="modal-content success-box">
+            <h2>🎉 Order Placed!</h2>
+            <p>Thank you for ordering with Foddy. Your fresh food is being prepared!</p>
+            <button class="checkout-btn" onclick="closeSuccessModal()">Continue Shopping</button>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
