@@ -1,20 +1,31 @@
 let cartCount = 0;
 
-async function fetchMenu() {
-    try {
-        const response = await fetch('/api/menu');
-        const menu = await response.json();
-        renderMenu(menu);
-    } catch (error) {
-        console.error(error);
-    }
-}
+const menuItems = [
+  { 
+    id: 1, 
+    name: "Classic Burger", 
+    price: 8.99, 
+    image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&q=80" 
+  },
+  { 
+    id: 2, 
+    name: "Pepperoni Pizza", 
+    price: 12.99, 
+    image: "https://images.unsplash.com/photo-1513104890d38-7c0f4749419b?w=500&q=80" 
+  },
+  { 
+    id: 3, 
+    name: "Creamy Pasta", 
+    price: 10.99, 
+    image: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=500&q=80" 
+  }
+];
 
-function renderMenu(menu) {
+function renderMenu() {
     const container = document.getElementById('menu-container');
     container.innerHTML = '';
     
-    menu.forEach(item => {
+    menuItems.forEach(item => {
         const div = document.createElement('div');
         div.className = 'menu-item';
         
@@ -46,4 +57,4 @@ function addToCart(item) {
     document.getElementById('cart-count').textContent = cartCount;
 }
 
-fetchMenu();
+renderMenu();
